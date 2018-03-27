@@ -5,28 +5,27 @@
  */
 package lessons;
 
-import java.util.HashMap;
-
 /**
  *
  * @author osagieomon
  */
-public class OddOccurrencesInArray {
+
+// SCORE = 100%
+public class FrogJump {
     
-    static int solution(int[] A) {
-        int ar_size = A.length;
-        int i;
-        int res = 0;
+    static int solution(int X, int Y, int D) {
+        int diff = Y - X;
         
-        for (i = 0; i < ar_size; i++) {
-            res = res ^ A[i];
-        }
+        double num = ((double) diff) / D;
         
-        return res;
+        double num2 = Math.ceil(num);
+        
+        return (int) num2;
+        
     }
     
     public static void main(String[] args) {
-        int num = solution(new int[]{9, 3, 9, 3, 9, 7, 9});
+        int num = solution(10, 85, 30);
 
         System.out.println(num);
         

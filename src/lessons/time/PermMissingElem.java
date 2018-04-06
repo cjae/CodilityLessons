@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lessons;
+package lessons.time;
 
 /**
  *
@@ -11,21 +11,22 @@ package lessons;
  */
 
 // SCORE = 100%
-public class FrogJump {
+public class PermMissingElem {
     
-    static int solution(int X, int Y, int D) {
-        int diff = Y - X;
-        
-        double num = ((double) diff) / D;
-        
-        double num2 = Math.ceil(num);
-        
-        return (int) num2;
-        
+    static int solution(int[] A) {        
+        long n = A.length + 1;
+        long total = n * (n + 1) / 2;
+
+        for (int num : A) {
+
+            total -= num;
+        }
+
+        return (int)total;
     }
     
     public static void main(String[] args) {
-        int num = solution(10, 85, 30);
+        int num = solution(new int[]{2, 3, 1, 5});
 
         System.out.println(num);
         
